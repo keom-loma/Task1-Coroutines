@@ -11,5 +11,4 @@ class NewRepository @Inject constructor(private val newService: NewService) {
         val res = newService.getPosts()
         emit(res)
     }
-
 }

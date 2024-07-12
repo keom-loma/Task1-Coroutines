@@ -1,5 +1,6 @@
 package com.example.coroutineproject.data
 
+import com.example.coroutineproject.api.NewService
 import com.example.coroutineproject.api.UserService
 import dagger.Module
 import dagger.Provides
@@ -20,13 +21,5 @@ object UserRetrofit {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(UserService::class.java)
-    }
-
-
-
-    @Provides
-    @Singleton
-    fun providerNewRepository(userService: UserService): UserRepository1 {
-        return UserRepository1(userService)
     }
 }
