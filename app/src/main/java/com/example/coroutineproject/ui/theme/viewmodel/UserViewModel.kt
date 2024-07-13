@@ -9,6 +9,7 @@ import com.example.coroutineproject.api.UserService
 import com.example.coroutineproject.data.UserRepository1
 import com.example.coroutineproject.model.UserModelItem
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -31,7 +32,6 @@ class UserViewModel @Inject constructor(private val userRepository1: UserReposit
 	init {
 		fetchPost()
 	}
-
 	private fun fetchPost() {
 		viewModelScope.launch {
 			runCatching {

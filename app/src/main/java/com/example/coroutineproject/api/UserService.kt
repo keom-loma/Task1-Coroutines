@@ -10,5 +10,4 @@ interface UserService {
   @GET("/posts")
   suspend fun getPosts(): List<UserModelItem>
 
-
 }

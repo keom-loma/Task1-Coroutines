@@ -88,10 +88,14 @@ dependencies {
 
     // Hilt
     implementation (libs.hilt.android)
+    implementation(libs.firebase.crashlytics.buildtools)
     kapt (libs.hilt.compiler)
 
     // Hilt Navigation
     implementation (libs.androidx.hilt.navigation.compose)
+    // Navigation
+   // implementation(libs.androidx.navigation.compose)
+    implementation (libs.androidx.activity.compose)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

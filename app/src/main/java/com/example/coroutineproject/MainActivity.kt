@@ -1,7 +1,7 @@
 package com.example.coroutineproject
 
+import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
+
 import androidx.compose.material3.Card
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -30,19 +31,23 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.coroutineproject.model.UserModelItem
 import com.example.coroutineproject.ui.theme.CoroutineProjectTheme
+
 import com.example.coroutineproject.ui.theme.viewmodel.UserViewModel
+
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+	@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 	@OptIn(ExperimentalMaterial3Api::class)
+
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
+
 		enableEdgeToEdge()
 
 		setContent {
 			val viewModel: UserViewModel = hiltViewModel()
-
 
 			CoroutineProjectTheme {
 				Scaffold(modifier = Modifier
@@ -68,7 +73,7 @@ fun Greeting(viewModel: UserViewModel) {
 		isLoading = it
 	}
 
-	if (isLoading  && post.value.isEmpty().not()) {
+	if (isLoading && post.value.isEmpty().not()) {
 		Box(
 			modifier = Modifier
 				.fillMaxWidth()
