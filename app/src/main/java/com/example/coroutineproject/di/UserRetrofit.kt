@@ -1,6 +1,5 @@
-package com.example.coroutineproject.data
+package com.example.coroutineproject.di
 
-import com.example.coroutineproject.api.NewService
 import com.example.coroutineproject.api.UserService
 import dagger.Module
 import dagger.Provides

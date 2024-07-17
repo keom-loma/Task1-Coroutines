@@ -2,6 +2,7 @@ package com.example.coroutineproject
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -48,7 +49,6 @@ class MainActivity : ComponentActivity() {
 
 		setContent {
 			val viewModel: UserViewModel = hiltViewModel()
-
 			CoroutineProjectTheme {
 				Scaffold(modifier = Modifier
 					.fillMaxSize()
@@ -105,7 +105,7 @@ fun MyBaseView(listOfUser: List<UserModelItem>, onClick: () -> Unit) {
 			contentAlignment = Alignment.Center,
 		) {
 			Text(text = "No data found")
-			// CircularProgressIndicator()
+		// CircularProgressIndicator()
 		}
 	} else {
 		LazyColumn {

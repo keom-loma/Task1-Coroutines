@@ -12,6 +12,7 @@ import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
@@ -30,7 +31,7 @@ import kotlinx.coroutines.launch
 @Composable
 fun Details(navController: NavController) {
 
-	var counter by remember { mutableStateOf(0) }
+	val counter by remember { mutableIntStateOf(0) }
 	val context = LocalContext.current
 
 	Column(modifier = Modifier.padding(top = 200.dp)) {

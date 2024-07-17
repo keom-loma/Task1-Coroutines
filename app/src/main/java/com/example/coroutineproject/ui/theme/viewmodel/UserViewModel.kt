@@ -18,6 +18,7 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
+import kotlin.math.log
 
 @HiltViewModel
 class UserViewModel @Inject constructor(private val userRepository1: UserRepository1) :
@@ -43,6 +44,7 @@ class UserViewModel @Inject constructor(private val userRepository1: UserReposit
 					response.collect {
 						withContext(Dispatchers.Main) {
 							_posts.value = it
+							Log.i("Test simple", "fetchPost: $it")
 						}
 					}
 				}
